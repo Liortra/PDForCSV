@@ -41,6 +41,26 @@ dependencies {
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   ```
+  
+**2.** Add requestLegacyExternalStorage at you manifest/application
+```Java
+ <application
+        android:requestLegacyExternalStorage="true"
+  ``` 
+  
+**3.** Add provider at you manifest/application
+```Java
+ <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+  ``` 
+  
 **2.** Add the next methods to your activity
 ```Java
   //handle result of Runtime permission
