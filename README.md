@@ -8,7 +8,7 @@ PDF or CSV library creator
 * [Note](https://github.com/Liortra/PDForCSV/blob/master/README.md#note)
 * [License](https://github.com/Liortra/PDForCSV/blob/master/README.md#license)
 
-|<img src="PDForCSVIMG/main.jpg" width="200">|<img src="PDForCSVIMG/myFiles.jpg" width="200">|<img src="PDForCSVIMG/emailCSV.jpg" width="200">|<img src="PDForCSVIMG/emailPDF.jpg" width="200">|
+<img src="PDForCSVIMG/main.jpg" width="200"><img src="PDForCSVIMG/myFiles.jpg" width="200"><img src="PDForCSVIMG/emailCSV.jpg" width="200"><img src="PDForCSVIMG/emailPDF.jpg" width="200">|
 
 ## Explanation
 A simple library help you to create a CSV file or PDF file and send them by email.
