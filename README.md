@@ -30,14 +30,16 @@ Step 2. Add the dependency:
 
 ```
 dependencies {
-  implementation 'com.github.Liortra:PDForCSV:Tag'
+  implementation 'com.github.Liortra:PDForCSV:1.00.1'
 }
 ```
 
 ##  How To Use
-**1.** Create an instance in your activity
+**1.** Add permission at you manifest
 ```Java
-  Convertor convertor = new Convertor(this);
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   ```
 **2.** Add the next methods to your activity
 ```Java
@@ -64,7 +66,7 @@ The app will ask your premission for your storage, please allow it.
 
 ## License
 
-    Copyright 2020 Lior Trachtman
+    Copyright 2021 Lior Trachtman
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
