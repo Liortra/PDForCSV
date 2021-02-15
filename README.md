@@ -59,24 +59,44 @@ dependencies {
         </provider>
   ``` 
   
-**2.** Add the next methods to your activity
+**4.** Add provider at you res/xml
 ```Java
-  //handle result of Runtime permission
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        convertor.onRequestPermissionsResult(requestCode,permissions,grantResults);
+  <?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="external_files" path="."/>
+</paths>
+  ``` 
+  
+**5.** Now you can use the methods of EmailSender & PDFMaker & CSVMaker (i add an example of mine)
+```Java
+      private void sendPDF() {
+        String fileName = "test";
+        String textToMail = "Hello here you PDf in your mail";
+        String email = "liortra@gmail.com";
+        String subject = "PDForCSV == PDF";
+        EmailSender.sendPdfToEmail(this,fileName,textToMail,email,subject);
     }
 
-    //handle result of picked image
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        convertor.onActivityResult(requestCode,resultCode,data,main_IMG_photo);
+    private void sendCSV() {
+        String fileName = "test";
+        String textToMail = "Hello here you CSV in your mail";
+        String email = "liortra@gmail.com";
+        String subject = "PDForCSV == CSV";
+        EmailSender.sendCsvToEmail(this,fileName,textToMail,email,subject);
     }
-```
-**3.** Now you can use the method
-```Java
-  convertor.changePhoto()
+
+    private void createPDF() {
+        String fileName = "test";
+        List<String> list = Arrays.asList("data1","data2","data3","data4");
+        PDFMaker.createMyPDF(fileName,list);
+    }
+
+    private void createCSV() {
+        String fileName = "test";
+        String HEADER = "Info";
+        List<String> list = Arrays.asList("data1","data2","data3","data4");
+        CSVMaker.writeToCsv(fileName,list,HEADER);
+    }
 ```
 
 ## Note
